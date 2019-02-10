@@ -1,0 +1,189 @@
+---
+title: "Week 2 Chapter 1 - Introduction to Data"
+author: "Yohannes Deboch"
+date: "February 10, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+# install.packages("openintro")
+library(openintro)
+data(heartTr)
+```
+
+# 1.8 Smoking habits of UK residents.
+```{r}
+data(smoking)
+```
+
+(a) What does each row of the data matrix represent?
+Answer : Each row of the data represents a response from an individual/a single response.
+(b) How many participants were included in the survey?
+
+Answer:
+```{r}
+nrow(smoking)
+```
+
+1691 participates were included in the survey.
+(c) Indicate whether each variable in the study is numerical or categorical. If numerical, identify
+as continuous or discrete. If categorical, indicate if the variable is ordinal.
+Answer:
+```{r}
+sapply(smoking, class)
+sapply(smoking, table)
+
+```
+
+Sex - Categorical 
+age - numerical
+marital - categorical
+grossincome - categorical(ordinal)
+smoke - categorical
+amtWeekends - categorical(ordinal)
+amtWeekdays - caegeroical(ordinal)
+# 1.10 Cheaters, scope of inference
+
+(a) Identify the population of interest and the sample in this study.
+Answer: The population of study is children between ages 5 and 15. The sample in the study is 160 children.
+(b) Comment on whether or not the results of the study can be generalized to the population, and
+if the findings of the study can be used to establish causal relationships.
+Answer: The result of the study can be generalized and the study  can be used to establish causal relationships based on statistical analysis .
+
+# 1.28 Reading the paper
+(a) An article titled Risks: Smokers Found More Prone to Dementia states the following: 61
+“Researchers analyzed data from 23,123 health plan members who participated in a voluntary
+exam and health behavior survey from 1978 to 1985, when they were 50-60 years old. 23 years
+later, about 25% of the group had dementia, including 1,136 with Alzheimer’s disease and 416
+with vascular dementia. After adjusting for other factors, the researchers concluded that pack-a-
+day smokers were 37% more likely than nonsmokers to develop dementia, and the risks went up
+with increased smoking; 44% for one to two packs a day; and twice the risk for more than two
+packs.”
+Based on this study, can we conclude that smoking causes dementia later in life? Explain your
+reasoning.
+Answer: Yes. Based on the study we can conclude that smoking causes dementia later in life. The reason is that the people who smoke are more likely to get dementia than who don't smoke and it's based on statistical analysis significant result.
+(b) Another article titled The School Bully Is Sleepy states the following: 62
+“The University of Michigan study, collected survey data from parents on each child’s sleep habits
+and asked both parents and teachers to assess behavioral concerns. About a third of the students
+studied were identified by parents or teachers as having problems with disruptive behavior or
+bullying. The researchers found that children who had behavioral issues and those who were
+identified as bullies were twice as likely to have shown symptoms of sleep disorders.”
+A friend of yours who read the article says, “The study shows that sleep disorders lead to
+bullying in school children.” Is this statement justified? If not, how best can you describe the
+conclusion that can be drawn from this study?
+Answer: I don't think the statement is justified. From this study we can conclude that students who bully have sleep disorders but there isn't any indication of causal relation. Correlation doesn't always means causation.
+
+# 1.36 Exercise and mental health.
+A researcher is interested in the effects of exercise on
+mental health and he proposes the following study: Use stratified random sampling to ensure rep-
+representative proportions of 18-30, 31-40 and 41- 55 year old from the population. Next, randomly
+assign half the subjects from each age group to exercise twice a week, and instruct the rest not
+to exercise. Conduct a mental health exam at the beginning and at the end of the study, and
+compare the results.
+(a) What type of study is this?
+Answer: This is an experimental study .
+(b) What are the treatment and control groups in this study?
+Answer: The control of this study is people who don't exercise and the treatment group is the people who study.
+(c) Does this study make use of blocking? If so, what is the blocking variable?
+Answer: Yes. The study use blocking. The blocking variables are age group. 
+(d) Does this study make use of blinding?
+Answer: The study don't use blinding.
+(e) Comment on whether or not the results of the study can be used to establish a causal real-
+relationship between exercise and mental health, and indicate whether or not the conclusions can
+be generalized to the population at large.
+Answer: Te results of the study can be used to establish a causal relationship between exerciser and mental health, and indicates conclusion can not be generalized to the population at large as the study is experimental and it doesn't include people of all ages.
+(f) Suppose you are given the task of determining if this proposed study should get funding.
+Would you have any reservations about the study proposal?
+Answer: The study doesn't consider other factors as blocking factor like gender, weight etc. So I will have reservations to consider other factors.
+
+# 1.48 Stats scores
+
+```{r}
+stats <- c(57, 66, 69, 71, 72, 73, 74, 77, 78, 78, 79, 79, 81, 81, 82, 83, 83, 88, 89, 94)
+boxplot(stats, main = "Score of Stats Scores")
+```
+# 1.50 Mix-and-match
+Answer: (a) histogram is approximately normally distributed, platykertic.
+(b) histogram if approximately uniformly distributed.
+(c) This histogram is negatively skewed.
+(a) box plot is negatively skewed, with large number of outlines.
+(2) Approximately normal distributions with outlines on the both ends. Mean, median and mode are approximately similar with smaller standard deviation.
+(3) Approximately normal distributed data with no outlines. 
+
+
+# 1.56 Distributions and appropriate statistics, Part II. 
+For each of the following, state
+whether you expect the distribution to be symmetric, right skewed, or left skewed. Also specify
+whether the mean or median would best represent a typical observation in the data, and whether
+the variability of observations would be best represented using the standard deviation or IQR.
+Explain your reasoning.
+(a) Housing prices in a country where 25% of the houses cost below $350,000, 50% of the houses
+cost below \$450,000, 75% of the houses cost below \$1,000,000 and there are a meaningful
+number of houses that cost more than $6,000,000.
+Answer: The distribution is left skewed. The mean will best represent the data. The variability will be best represented using IQR as there are extreme values.
+
+(b) Housing prices in a country where 25% of the houses cost below $300,000, 50% of the houses
+cost below \$600,000, 75% of the houses cost below \$900,000 and very few houses that cost
+more than \$1,200,000.
+Answer: The distribution is approximately normally distributed. Mean would best represent the data as the distribution is approximately symmetric.
+(c) Number of alcoholic drinks consumed by college students in a given week. Assume that most of
+these students don’t drink since they are under 21 years old, and only a few drink excessively.
+Answer: The distribution is left skewed, it'll be best represent by mode as most of the students don't drink.
+(d) Annual salaries of the employees at a Fortune 500 company where only a few high level
+executives earn much higher salaries than all the other employees
+Answer: The distribution is approximately normal , mode will be best suitable as there are very few high values.
+
+# 1.70 Heart transplants.
+
+ The Stanford University Heart Transplant Study was conducted to
+determine whether an experimental heart transplant program increased lifespan. Each patient
+entering the program was designated an official heart transplant candidate, meaning that he was
+gravely ill and would most likely benefit from a new heart. Some patients got a transplant and
+some did not. The variable transplant indicates which group the patients were in; patients in the
+treatment group got a transplant and those in the control group did not. Another variable called
+survived was used to indicate whether or not the patient was alive at the end of the study. Of
+the 34 patients in the control group, 30 died. Of the 69 people in the treatment group, 45 died
+
+
+(a) Based on the mosaic plot, is survival independent of whether or not the patient got a trans-
+plant? Explain your reasoning.
+
+Answer: Based on the mosaic plot the survival is not dependent of whether or not the patient got a transplant. In treat treatment group more patient survived than the control group.
+
+(b) What do the box plots below suggest about the efficacy (effectiveness) of the heart transplant
+treatment.
+Answer: The box plot said the the patients who got heart transplant survived more than who didn't got heart transplant. The box plot suggests that the heart transplant is effective.
+(c) What proportion of patients in the treatment group and what proportion of patients in the
+control group died?
+Answer: 
+```{r}
+data("heartTr")
+dt <- prop.table(table(heartTr$transplant, heartTr$survived))*100
+round(dt, 2)
+```
+In the treatment group 43.69 percent died and in the control group 29.13 percent died.
+(d) One approach for investigating whether or not the treatment is effective is to use a random-
+ionization technique.
+i. What are the claims being tested?
+Answer: The patients in the treatment group survived more than control group.
+ii. The paragraph below describes the set up for such approach, if we were to do it with-
+out using statistical software. Fill in the blanks with a number or phrase, whichever is
+appropriate.
+We write alive on $\underline{Heart,Spades}$cards representing patients who were alive at
+the end of the study, and dead on $\underline{Diamond,Stars}$ cards representing patients
+who were not. Then, we shuffle these cards and split them into two groups:
+one group of size$\underline{30}$ representing treatment, and another group of
+size $\underline{30}$representing control. We calculate the difference between
+the proportion of dead cards in the treatment and control groups (treatment -
+control) and record this value. We repeat this 100 times to build a distribution
+centered at $\underline{mean}$. Lastly, we calculate the fraction of simulations where
+the simulated differences in proportions are $\underline{small}$. If this fraction is low,
+we conclude that it is unlikely to have observed such an outcome by chance and
+that the null hypothesis should be rejected in favor of the alternative.
+
+iii. What do the simulation results shown below suggest about the effectiveness of the trans-
+plant program?
+Answer: From the simulation we conclude that the transplant is effective.
